@@ -6,7 +6,7 @@
 /*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 21:46:54 by volmer            #+#    #+#             */
-/*   Updated: 2024/11/28 22:11:41 by volmer           ###   ########.fr       */
+/*   Updated: 2024/11/28 23:22:14 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,34 @@ void	Harl::warning(void){
 }
 
 void	Harl::error(void){
-	std::cout << "ERROR: This is unacceptable! I want to speal to the manager now."	
+	std::cout << "ERROR: This is unacceptable! I want to speal to the manager now."	<< std::endl;
+}
+
+// ! FUNCION PUBLICA DE ARRAY DE FUNCIONES
+
+void	Harl::complain(std::string level){
+	void	(Harl::*ptr_complain[4])(void) =  {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+		std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+		int i = 0;
+		while (i < 4){
+			if (levels[i] == level){
+				(this->*ptr_complain[i])();
+				break;
+			}
+			i++;
+		}
+}
+
+// ! FUNCION MAIN
+
+int	main(void){
+	
+	Harl	instance;
+	
+	instance.complain("DEBUG");
+	instance.complain("INFO");
+	instance.complain("WARNING");
+	instance.complain("ERROR");
+	
+	return (0);
 }

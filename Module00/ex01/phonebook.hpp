@@ -6,43 +6,17 @@
 /*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 17:49:53 by jdelorme          #+#    #+#             */
-/*   Updated: 2025/02/10 17:49:42 by volmer           ###   ########.fr       */
+/*   Updated: 2025/02/10 17:58:48 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
-#include <iostream>
-#include <string>
-#include <iomanip>
-
-
-#define MAX_CONTACTS 8
-
-
-class	Contact{
-private:
-	std::string _fullname;
-	std::string _scndname;
-	std::string _nickname;
-	std::string _phnumber;
-	std::string _dsecret;
-public:
-	Contact(void) {};
-	~Contact(void) {};
-	/*Función setter atributos privados del contacto*/
-	void	setValue(std::string full_name, std::string scnd_name, std::string nickname
-		, std::string ph_number, std::string dark_secret);
-	/*Funciones getter atributos para el setter sobre el contacto*/
-	std::string getFullname(size_t size) const; //		D
-	std::string getScndname(size_t size) const; //		D
-	std::string getNickname(size_t size) const; //		D
-	std::string getPhoneNumber(size_t size) const;//	D
-	std::string getDarkestSecret(size_t size) const;//	D
-	/*	Funcion para mostrar la infromación del contacto	*/
-	void	ft_showInfo(void) const;
-};
+# include <iostream>
+# include <string>
+# include <iomanip>
+# include "contact.hpp"
 
 class	PhoneBook{
 private:

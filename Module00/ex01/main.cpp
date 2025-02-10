@@ -6,7 +6,7 @@
 /*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 18:02:41 by volmer            #+#    #+#             */
-/*   Updated: 2025/02/10 18:09:46 by volmer           ###   ########.fr       */
+/*   Updated: 2025/02/10 18:12:36 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ int	main()
 		}
 		else if (input.compare("EXIT") == 0)
 			break;
+		else if (input.empty() == 0)
+			std::cout << "Empty input" << std::endl;
 		else
 			std::cout << "¡OPCIÓN INVALIDA!" << std::endl;
 	}

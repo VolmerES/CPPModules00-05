@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdelorme <jdelorme@student.42.fr>          +#+  +:+       +#+        */
+/*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 17:49:55 by jdelorme          #+#    #+#             */
-/*   Updated: 2024/11/20 19:07:37 by jdelorme         ###   ########.fr       */
+/*   Updated: 2025/02/10 16:55:44 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,9 @@ bool	ft_isnum(std::string str) {
 //Constructor
 PhoneBook::PhoneBook(void){
 	this->_size = 0;
-	this->_contact = new Contact[MAX_CONTACTS];
 }
 //Destructor
 PhoneBook::~PhoneBook(void){
-	delete[] this->_contact;
 }
 
 //geter varable sizze
@@ -37,7 +35,7 @@ std::size_t PhoneBook::ft_get_size(void) const{
 
 //listar contactos
 void	PhoneBook::ft_list_contacts(void) const{
-	int	i = 0;
+	size_t	i = 0;
 	std::cout << "\tIndex\t First Name\t Second Name\t Nickname\t Phone Number\n";
 	while (i < this->_size){
 		std::cout << "\t" << i << "\t" << this->_contact[i].getFullname(10) << "\t" << this->_contact[i].getScndname(10)
@@ -57,14 +55,35 @@ void	PhoneBook::ft_display_contact(size_t index) const{
 //Añadir contactos
 void	PhoneBook::ft_add_contact(void){
 	std::string firstname, scndname, nickname, phonenumber, darkestsecret;
-	std::cout << "First Name:\t"; getline(std::cin, firstname);
+	do
+	{
+		std::cout << "First Name:\t"; getline(std::cin, firstname);
+		if (firstname.empty())
+			std::cout << "First Name is required" << std::endl;
+	} while (firstname.empty());
+	do {
 	std::cout << "Second Name:\t"; getline(std::cin, scndname);
-	std::cout << "Nickname:\t"; getline(std::cin, nickname);
-	std::cout << "Phone Number:\t"; getline(std::cin, phonenumber);
+	if (scndname.empty())
+		std::cout << "Second Name is required" << std::endl;
+	} while (scndname.empty());
+	do {
+		std::cout << "Nickname:\t"; getline(std::cin, nickname);
+	if (nickname.empty())
+		std::cout << "Nickname is required" << std::endl;
+	} while (nickname.empty());
+	do {
+		std::cout << "Phone Number:\t"; getline(std::cin, phonenumber);
+	if (phonenumber.empty())
+		std::cout << "Phone Number is required" << std::endl;
+	} while (phonenumber.empty());
+	do {
 	std::cout << "Darkest Secret:\t"; getline(std::cin, darkestsecret);
+	if (darkestsecret.empty())
+		std::cout << "Darkest Secret is required" << std::endl;
+	} while (darkestsecret.empty());
 
 	if (this->_size > MAX_CONTACTS){
-		for (int i = 0; i <= MAX_CONTACTS, i++;)
+		for (int i = 0; i < MAX_CONTACTS; i++)
 			this->_contact[i] = this->_contact[i + 1];
 		this->_size--;
 	}
@@ -131,7 +150,7 @@ std::string Contact::getDarkestSecret(size_t size) const{
 	return (this->_dsecret);
 }
 
-void	Contact::ft_showInfo(void){
+void	Contact::ft_showInfo(void) const {
 	std::cout << "\tFirst Name:\t" << this->_fullname << std::endl;
 	std::cout << "\tSecond Name:\t" << this->_scndname << std::endl;
 	std::cout << "\tNickname:\t" << this->_nickname << std::endl;

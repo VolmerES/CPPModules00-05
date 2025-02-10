@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdelorme <jdelorme@student.42.fr>          +#+  +:+       +#+        */
+/*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 17:49:53 by jdelorme          #+#    #+#             */
-/*   Updated: 2024/11/20 19:07:13 by jdelorme         ###   ########.fr       */
+/*   Updated: 2025/02/10 17:00:47 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,13 @@ public:
 	std::string getPhoneNumber(size_t size) const;//	D
 	std::string getDarkestSecret(size_t size) const;//	D
 	/*	Funcion para mostrar la infromación del contacto	*/
-	void	ft_showInfo(void);
+	void	ft_showInfo(void) const;
 };
 
 class	PhoneBook{
 private:
 	size_t	_size;
-	Contact  *_contact;
+	Contact  _contact[8];
 public:
 	PhoneBook(void);
 	~PhoneBook(void);

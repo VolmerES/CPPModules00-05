@@ -3,7 +3,7 @@ SRC = phonebook.cpp \
 	main.cpp
 
 OBJ = $(SRC:.cpp=.o)
-NAME = megaphone
+NAME = superphone
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 CXX = c++
 RM = rm -f

@@ -6,7 +6,7 @@
 /*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 18:02:41 by volmer            #+#    #+#             */
-/*   Updated: 2025/02/10 18:03:23 by volmer           ###   ########.fr       */
+/*   Updated: 2025/02/10 18:09:46 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ int	main()
 			PhoneInstance.ft_add_contact();
 		else if (input.compare("SEARCH") == 0)
 		{
+			if (PhoneInstance.ft_get_size() == 0)
+			{
+				std::cout << "No hay contactos para mostrar" << std::endl;
+				continue;
+			}
 			std::string index;
 			PhoneInstance.ft_list_contacts();
     		std::cout << "\tIngreser un índice: ";
@@ -45,7 +50,7 @@ int	main()
 				std::cout << "\tInvalid index" << std::endl;
 			
 		}
-		else if (input.empty() || input.compare("EXIT") == 0)
+		else if (input.compare("EXIT") == 0)
 			break;
 		else
 			std::cout << "¡OPCIÓN INVALIDA!" << std::endl;

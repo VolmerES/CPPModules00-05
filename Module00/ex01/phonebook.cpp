@@ -6,7 +6,7 @@
 /*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 17:49:55 by jdelorme          #+#    #+#             */
-/*   Updated: 2025/02/10 16:55:44 by volmer           ###   ########.fr       */
+/*   Updated: 2025/02/10 17:39:56 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,17 @@ void	PhoneBook::ft_list_contacts(void) const{
 	size_t	i = 0;
 	std::cout << "\tIndex\t First Name\t Second Name\t Nickname\t Phone Number\n";
 	while (i < this->_size){
-		std::cout << "\t" << i << "\t" << this->_contact[i].getFullname(10) << "\t" << this->_contact[i].getScndname(10)
-		<< "\t" << this->_contact[i].getNickname(10) << "\t" << this->_contact[i].getPhoneNumber(10) << std::endl;
+		std::cout << "\t" << i << "\t" << this->_contact[i].getFullname(10) << "\t" 
+		<< this->_contact[i].getScndname(10) << "\t" 
+		<< this->_contact[i].getNickname(10) << "\t" 
+		<< this->_contact[i].getPhoneNumber(10) << std::endl;
 		i++;
 	}
 }
 
 //listar un contacto
 void	PhoneBook::ft_display_contact(size_t index) const{
-	if (index <= 8 && index >= 0)
+	if (index < this->_size)
 		this->_contact[index].ft_showInfo();
 	else
 		std::cout << "Invalid index" << std::endl;
@@ -82,10 +84,10 @@ void	PhoneBook::ft_add_contact(void){
 		std::cout << "Darkest Secret is required" << std::endl;
 	} while (darkestsecret.empty());
 
-	if (this->_size > MAX_CONTACTS){
-		for (int i = 0; i < MAX_CONTACTS; i++)
+	if (this->_size >= MAX_CONTACTS){
+		for (int i = 0; i < MAX_CONTACTS - 1; i++)
 			this->_contact[i] = this->_contact[i + 1];
-		this->_size--;
+		this->_contact[MAX_CONTACTS - 1].setValue(firstname, scndname, nickname, phonenumber, darkestsecret);
 	}
 	else{
 		this->_contact[this->_size].setValue(firstname, scndname, nickname, phonenumber, darkestsecret);
@@ -179,7 +181,7 @@ int	main()
     		std::cout << "\tIngreser un índice: ";
 			std::getline(std::cin, index);
 			if (ft_isnum(index))
-				PhoneInstance.ft_display_contact(atoi(input.c_str()));
+				PhoneInstance.ft_display_contact(atoi(index.c_str()));
 			else
 				std::cout << "\tInvalid index" << std::endl;
 			

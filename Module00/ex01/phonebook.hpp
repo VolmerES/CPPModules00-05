@@ -6,7 +6,7 @@
 /*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 17:49:53 by jdelorme          #+#    #+#             */
-/*   Updated: 2025/02/10 17:15:50 by volmer           ###   ########.fr       */
+/*   Updated: 2025/02/10 17:49:42 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include <string>
+#include <iomanip>
+
 
 #define MAX_CONTACTS 8
 

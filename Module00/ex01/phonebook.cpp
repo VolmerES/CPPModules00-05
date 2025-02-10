@@ -6,7 +6,7 @@
 /*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 17:49:55 by jdelorme          #+#    #+#             */
-/*   Updated: 2025/02/10 17:39:56 by volmer           ###   ########.fr       */
+/*   Updated: 2025/02/10 17:53:21 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,24 @@ std::size_t PhoneBook::ft_get_size(void) const{
 }
 
 //listar contactos
-void	PhoneBook::ft_list_contacts(void) const{
-	size_t	i = 0;
-	std::cout << "\tIndex\t First Name\t Second Name\t Nickname\t Phone Number\n";
-	while (i < this->_size){
-		std::cout << "\t" << i << "\t" << this->_contact[i].getFullname(10) << "\t" 
-		<< this->_contact[i].getScndname(10) << "\t" 
-		<< this->_contact[i].getNickname(10) << "\t" 
-		<< this->_contact[i].getPhoneNumber(10) << std::endl;
-		i++;
-	}
+void PhoneBook::ft_list_contacts(void) const{
+    size_t i = 0;
+
+    std::cout << std::setw(10) << "Index" << "|"
+              << std::setw(10) << "First Name" << "|"
+              << std::setw(10) << "Second Name" << "|"
+              << std::setw(10) << "Nickname" << "|"
+              << std::setw(10) << "Phone Number" << std::endl;
+    std::cout << "------------------------------------------------------------" << std::endl;
+
+    while (i < this->_size){
+        std::cout << std::setw(10) << i << "|"
+                  << std::setw(10) << this->_contact[i].getFullname(10) << "|"
+                  << std::setw(10) << this->_contact[i].getScndname(10) << "|"
+                  << std::setw(10) << this->_contact[i].getNickname(10) << "|"
+                  << std::setw(10) << this->_contact[i].getPhoneNumber(10) << std::endl;
+        i++;
+    }
 }
 
 //listar un contacto
@@ -75,8 +83,10 @@ void	PhoneBook::ft_add_contact(void){
 	} while (nickname.empty());
 	do {
 		std::cout << "Phone Number:\t"; getline(std::cin, phonenumber);
-	if (phonenumber.empty())
-		std::cout << "Phone Number is required" << std::endl;
+	if (phonenumber.empty() || !ft_isnum(phonenumber)){
+		std::cout << "Phone Number invalid" << std::endl;
+		phonenumber.clear();
+	}
 	} while (phonenumber.empty());
 	do {
 	std::cout << "Darkest Secret:\t"; getline(std::cin, darkestsecret);

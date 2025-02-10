@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdelorme <jdelorme@student.42.fr>          +#+  +:+       +#+        */
+/*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 16:34:11 by jdelorme          #+#    #+#             */
-/*   Updated: 2024/11/13 17:48:53 by jdelorme         ###   ########.fr       */
+/*   Updated: 2025/02/10 16:03:47 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 
 int	main(int argc, char **argv)
 {
-	int	i {0
-	};
-	int j {-1};
+	int	i (0);
+	int j (0);
+	int flag;
 	
 	if (argc == 1)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
@@ -26,7 +26,19 @@ int	main(int argc, char **argv)
 	{
 		j = -1;
 		while (argv[i][++j])
-			std::cout << (char)toupper(argv[i][j] + 0);
+		{
+			flag = 0;
+			if (argv[i][j] == ' ' && flag == 0)
+			{
+				std::cout << " ";
+				flag = 1;
+			}
+			if (argv[i][j] != ' ')
+			{
+				std::cout << (char)toupper(argv[i][j] + 0);
+			}
+		}
+		
 	}
 	std::cout << std::endl;
 }

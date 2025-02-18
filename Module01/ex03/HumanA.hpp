@@ -1,34 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.hpp                                           :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdelorme <jdelorme@student.42.fr>          +#+  +:+       +#+        */
+/*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/25 14:50:09 by jdelorme          #+#    #+#             */
-/*   Updated: 2024/11/27 14:53:11 by jdelorme         ###   ########.fr       */
+/*   Created: 2025/02/17 21:31:24 by volmer            #+#    #+#             */
+/*   Updated: 2025/02/18 12:52:20 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_HPP
-#define MAIN_HPP
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
 
-#include <iostream>
-
-/*			WEAPON CLASS			*/
-
-class	Weapon{
-	private:
-		std::string	_type;
-
-	public:
-		Weapon(std::string type);
-		~Weapon(void);
-		
-		std::string&		getType();
-		void				setType(std::string param);
-	
-};
+#include "Weapon.hpp"
 
 /*			HUMAN A CLASS			*/
 
@@ -45,21 +30,6 @@ class	HumanA //: public Weapon
 		void	setWeapon(Weapon& Weapon);
 		void	attack(void) const;
 	
-};
-
-/*			HUMAN B CLASS			*/
-
-class	HumanB{
-	private:
-		std::string _nameB;
-		Weapon* _weaponB;
-
-	public:
-		HumanB(std::string name);
-		~HumanB(void);
-
-		void	setWeapon(Weapon& weapon);
-		void	attack(void) const;
 };
 
 #endif

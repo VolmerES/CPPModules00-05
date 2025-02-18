@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdelorme <jdelorme@student.42.fr>          +#+  +:+       +#+        */
+/*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 14:49:17 by jdelorme          #+#    #+#             */
-/*   Updated: 2024/11/27 14:56:25 by jdelorme         ###   ########.fr       */
+/*   Updated: 2025/02/17 21:37:59 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.hpp"
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 /*			CONSTRUCTORES DEFS*/
 
@@ -22,48 +24,6 @@ HumanB::HumanB(std::string name) : _nameB(name), _weaponB(NULL) {}
 Weapon::~Weapon(void){}
 HumanA::~HumanA(void){}
 HumanB::~HumanB(void){}
-
-// ! -------------------------------------------------------------------------
-
-/*			WEAPON CLASS			*/
-std::string&	Weapon::getType(){
-	std::string& typeREF = this->_type;
-	return typeREF;
-}
-
-void	Weapon::setType(std::string param){
-	this->_type = param;
-}
-
-// ! -------------------------------------------------------------------------
-
-/*			HUMAN A CLASS			*/
-
-void	HumanA::setWeapon(Weapon& Weapon){
-		_weaponA = Weapon;
-}
-
-void	HumanA::attack(void) const{
-		std::cout << this->_nameA << ": attacks with their " << _weaponA.getType() << std::endl;
-		
-}
-
-// ! -------------------------------------------------------------------------
-
-/*			HUMAN B CLASS			*/
-
-void	HumanB::attack(void) const{
-	if (this->_weaponB)
-		std::cout << this->_nameB << ": attacks with their " << this->_weaponB->getType() << std::endl;
-	else
-		std::cout << "There is no weapon to attack" << std::endl;
-}
-
-void	HumanB::setWeapon(Weapon& Weapon){
-	this->_weaponB = &Weapon;
-}
-
-// ! -------------------------------------------------------------------------
 
 int main()
 {

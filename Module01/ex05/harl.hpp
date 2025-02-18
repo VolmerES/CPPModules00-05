@@ -6,12 +6,12 @@
 /*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 21:47:06 by volmer            #+#    #+#             */
-/*   Updated: 2024/11/28 21:51:17 by volmer           ###   ########.fr       */
+/*   Updated: 2025/02/18 14:25:35 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_HPP
-#define MAIN_HPP
+#ifndef HARL_HPP
+#define HARL_HPP
 
 #include <iostream>
 

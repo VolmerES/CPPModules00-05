@@ -6,7 +6,7 @@
 /*   By: jdelorme <jdelorme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 17:36:19 by jdelorme          #+#    #+#             */
-/*   Updated: 2024/11/28 16:25:41 by jdelorme         ###   ########.fr       */
+/*   Updated: 2025/05/21 10:11:48 by jdelorme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ std::string	ft_replace(size_t pos, size_t len, const std::string s2, const std::
 void	ft_manager(std::string s1, std::string s2, std::ifstream* infile, std::string infilename){
 	std::string		line;
 	std::string		new_line;
-	std::string		file_name = infilename + ".replace.txt";
-	std::ofstream	outfile(file_name);
+	std::string		file_name = infilename + ".replace";
+	std::ofstream	outfile(file_name.c_str());
 
 	if (outfile.is_open()){
 

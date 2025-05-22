@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.hpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdelorme <jdelorme@student.42.fr>          +#+  +:+       +#+        */
+/*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/03 14:44:10 by jdelorme          #+#    #+#             */
-/*   Updated: 2024/12/03 16:38:57 by jdelorme         ###   ########.fr       */
+/*   Created: 2025/05/22 17:24:24 by volmer            #+#    #+#             */
+/*   Updated: 2025/05/22 19:54:19 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_HPP
-#define MAIN_HPP
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-#include <iostream>
+# include <iostream>
 
 class Fixed{
 	private:
-		int	_fixedp;
-		static const int	_fracb = 8;
-
-	public:
-		Fixed(void); // construtctor por defecto
-		Fixed(const Fixed& other); //constructor de copias
-		Fixed&	operator=(const Fixed& other); //operador de asignacion
-		~Fixed(void); //destructor por defecto
+		int	_fixpointnb;
+		static const int _fracnb = 8;
 		
+	public:
+		Fixed(void);
+		Fixed(const Fixed& other);
+		Fixed& operator=(const Fixed& other);
+		~Fixed(void);
+
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
 };

@@ -6,7 +6,7 @@
 /*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 20:11:04 by volmer            #+#    #+#             */
-/*   Updated: 2025/05/22 21:49:08 by volmer           ###   ########.fr       */
+/*   Updated: 2025/05/26 21:12:49 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,18 @@ class Fixed{
 
 		float	toFloat(void) const;
 		int		toInt(void) const;
+		Fixed Fixed::operator*(const Fixed& other) const; //*
+		Fixed Fixed::operator+(const Fixed& other) const; //+
+		Fixed Fixed::operator-(const Fixed& other) const; //-
+		
+		
+		
+		bool Fixed::operator>(const Fixed& other) const; //>
+		bool Fixed::operator<(const Fixed& other) const; //<
+		bool Fixed::operator>=(const Fixed& other) const; //>=
+		bool Fixed::operator<=(const Fixed& other) const; //<=
+		bool Fixed::operator==(const Fixed& other) const; //==
+		bool Fixed::operator!=(const Fixed& other) const; //!=
 };
 
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed);

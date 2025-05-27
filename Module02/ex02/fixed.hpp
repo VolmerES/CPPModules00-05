@@ -6,7 +6,7 @@
 /*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 20:11:04 by volmer            #+#    #+#             */
-/*   Updated: 2025/05/27 11:59:12 by volmer           ###   ########.fr       */
+/*   Updated: 2025/05/27 13:34:57 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,24 +34,29 @@ class Fixed{
 
 		float	toFloat(void) const;
 		int		toInt(void) const;
-		Fixed Fixed::operator*(const Fixed& other) const; //*
-		Fixed Fixed::operator+(const Fixed& other) const; //+
-		Fixed Fixed::operator-(const Fixed& other) const; //-
-		Fixed Fixed::operator/(const Fixed& other) const; // /
+		Fixed	operator*(const Fixed& other) const; //*
+		Fixed	operator+(const Fixed& other) const; //+
+		Fixed	operator-(const Fixed& other) const; //-
+		Fixed	operator/(const Fixed& other) const; // /
 		
 		
 		
-		bool Fixed::operator>(const Fixed& other) const; //>
-		bool Fixed::operator<(const Fixed& other) const; //<
-		bool Fixed::operator>=(const Fixed& other) const; //>=
-		bool Fixed::operator<=(const Fixed& other) const; //<=
-		bool Fixed::operator==(const Fixed& other) const; //==
-		bool Fixed::operator!=(const Fixed& other) const; //!=
+		bool	operator>(const Fixed& other) const; //>
+		bool	operator<(const Fixed& other) const; //<
+		bool	operator>=(const Fixed& other) const; //>=
+		bool	operator<=(const Fixed& other) const; //<=
+		bool	operator==(const Fixed& other) const; //==
+		bool	operator!=(const Fixed& other) const; //!=
 
-		Fixed Fixed::operator++(); //a++
-		Fixed Fixed::operator--(); //a--
-		Fixed Fixed::operator++(int); //++a
-		Fixed Fixed::operator--(int); //--a
+		Fixed	operator++(); //a++
+		Fixed	operator--(); //a--
+		Fixed	operator++(int); //++a
+		Fixed	operator--(int); //--a
+
+		static Fixed&			min(Fixed& a, Fixed& b);
+		static Fixed&			max(Fixed& a, Fixed& b);
+		static const Fixed&		min(const Fixed& a, const Fixed& b);
+		static const Fixed&		max(const Fixed& a, const Fixed& b);
 };
 
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed);

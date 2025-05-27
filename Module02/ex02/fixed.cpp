@@ -6,7 +6,7 @@
 /*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 20:42:38 by volmer            #+#    #+#             */
-/*   Updated: 2025/05/27 11:19:17 by volmer           ###   ########.fr       */
+/*   Updated: 2025/05/27 13:36:39 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,9 @@ int		Fixed::toInt(void) const {
 
 Fixed::~Fixed(){
 	std::cout << "Destructor called" << std::endl;
+}
+
+std::ostream& operator<<(std::ostream& out, const Fixed& fixed) {
+	out << fixed.toFloat();
+	return (out);
 }

@@ -1,5 +1,9 @@
 SRC = main.cpp \
-fixed.cpp
+fixed.cpp \
+aritmethic.cpp \
+comparison.cpp \
+increment.cpp \
+minmax.cpp
 OBJ = $(SRC:.cpp=.o)
 NAME = fixed
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98

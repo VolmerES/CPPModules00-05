@@ -6,7 +6,7 @@
 /*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 20:11:04 by volmer            #+#    #+#             */
-/*   Updated: 2025/05/26 21:12:49 by volmer           ###   ########.fr       */
+/*   Updated: 2025/05/27 11:28:22 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ class Fixed{
 		Fixed Fixed::operator*(const Fixed& other) const; //*
 		Fixed Fixed::operator+(const Fixed& other) const; //+
 		Fixed Fixed::operator-(const Fixed& other) const; //-
+		Fixed Fixed::operator/(const Fixed& other) const; // /
 		
 		
 		
@@ -46,6 +47,9 @@ class Fixed{
 		bool Fixed::operator<=(const Fixed& other) const; //<=
 		bool Fixed::operator==(const Fixed& other) const; //==
 		bool Fixed::operator!=(const Fixed& other) const; //!=
+
+		Fixed Fixed::operator++(); //++
+		Fixed Fixed::operator--(); //--
 };
 
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed);

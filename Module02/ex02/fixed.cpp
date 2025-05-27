@@ -6,7 +6,7 @@
 /*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 20:42:38 by volmer            #+#    #+#             */
-/*   Updated: 2025/05/26 21:12:28 by volmer           ###   ########.fr       */
+/*   Updated: 2025/05/27 11:19:17 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ Fixed& Fixed::operator=(const Fixed& other){
 	}
 	return(*this);
 }
+
 int	Fixed::getRawBits(void) const {
 	std::cout << "getRawBits member function called" <<std::endl;
 	return (this->_FixedPointValue);
@@ -57,77 +58,6 @@ float	Fixed::toFloat(void) const {
 
 int		Fixed::toInt(void) const {
 	return (this->_FixedPointValue >> _NbFractionalBits);
-}
-
-std::ostream& operator<<(std::ostream& out, const Fixed& fixed) {
-	out << fixed.toFloat();
-	return (out);
-}
-
-Fixed Fixed::operator*(const Fixed& other) const {
-	Fixed out;
-	out.setRawBits((this->_FixedPointValue * other._FixedPointValue) >> this->_NbFractionalBits);
-	return (out);
-}
-
-Fixed Fixed::operator+(const Fixed& other) const {
-	Fixed out;
-	out.setRawBits(this->_FixedPointValue + other._FixedPointValue);
-	return (out);
-}
-
-Fixed Fixed::operator-(const Fixed& other) const {
-	Fixed out;
-	out.setRawBits(this->_FixedPointValue - other._FixedPointValue);
-	return (out);
-}
-
-bool Fixed::operator>(const Fixed& other) const {
-	if (this->getRawBits()> other.getRawBits()){
-		return(1);
-	}
-	else
-		return(0);
-}
-
-bool Fixed::operator<(const Fixed& other) const {
-	if (this->getRawBits() < other.getRawBits()){
-		return(1);
-	}
-	else
-		return(0);
-}
-
-bool Fixed::operator>=(const Fixed& other) const {
-	if (this->getRawBits() >= other.getRawBits()){
-		return(1);
-	}
-	else
-		return(0);
-}
-
-bool Fixed::operator<=(const Fixed& other) const {
-	if (this->getRawBits() <= other.getRawBits()){
-		return(1);
-	}
-	else
-		return(0);
-}
-
-bool Fixed::operator==(const Fixed& other) const {
-	if (this->getRawBits() == other.getRawBits()){
-		return(1);
-	}
-	else
-		return(0);
-}
-
-bool Fixed::operator!=(const Fixed& other) const {
-	if (this->getRawBits() != other.getRawBits()){
-		return(1);
-	}
-	else
-		return(0);
 }
 
 Fixed::~Fixed(){

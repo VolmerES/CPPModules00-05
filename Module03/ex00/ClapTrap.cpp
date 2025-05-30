@@ -6,7 +6,7 @@
 /*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 17:02:13 by volmer            #+#    #+#             */
-/*   Updated: 2025/05/30 18:17:12 by volmer           ###   ########.fr       */
+/*   Updated: 2025/05/30 18:21:54 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,17 @@
 //constructor defecto
 ClapTrap::ClapTrap(void) {
 	std::cout << "Default constructor called" << std::endl;
+	this->_hitPoints = 10;
+	this->_energyPoints = 10;
+	this->_attackDamage = 0;
 }
 
 ClapTrap::ClapTrap(std::string name) {
 	std::cout << "Name constructor called" << std::endl;
 	this->_name = name;
+	this->_hitPoints = 10;
+	this->_energyPoints = 10;
+	this->_attackDamage = 0;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other) {

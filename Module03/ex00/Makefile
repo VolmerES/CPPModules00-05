@@ -1,7 +1,7 @@
 SRC = main.cpp \
 ClapTrap.cpp
 OBJ = $(SRC:.cpp=.o)
-NAME = fixed
+NAME = ClapTrap
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 CXX = c++
 RM = rm -f

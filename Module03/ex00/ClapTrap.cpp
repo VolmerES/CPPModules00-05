@@ -6,7 +6,7 @@
 /*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 17:02:13 by volmer            #+#    #+#             */
-/*   Updated: 2025/05/30 18:21:54 by volmer           ###   ########.fr       */
+/*   Updated: 2025/05/30 18:29:28 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,3 +84,12 @@ void ClapTrap::beRepaired(unsigned int amount) {
 		          << std::endl;
 	}
 }
+
+int ClapTrap::getAttackDamage() const {
+	return this->_attackDamage;
+}
+
+void ClapTrap::setAttackDamage(int amount) {
+	this->_attackDamage = amount;
+}
+

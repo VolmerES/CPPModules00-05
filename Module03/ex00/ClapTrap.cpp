@@ -6,7 +6,7 @@
 /*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 17:02:13 by volmer            #+#    #+#             */
-/*   Updated: 2025/05/30 17:34:44 by volmer           ###   ########.fr       */
+/*   Updated: 2025/05/30 17:58:49 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,37 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
 ClapTrap::~ClapTrap(void) {}
 
 void	ClapTrap::attack(const std::string& target) {
-	if ((this->_energyPoints && this->_hitPoints) > 0) {
+	if ((this->_energyPoints > 0) && (this->_hitPoints > 0)) {
 		this->_energyPoints--;
-		std::cout <<  "ClapTrap" << this->_name << "attacks" 
-		<< target << ", causing" << this->_attackDamage 
-		<< "points of damage!" << std::endl;
+		std::cout <<  "ClapTrap " << this->_name << " attacks " 
+		<< target << ", causing " << this->_attackDamage 
+		<< " points of damage!" << std::endl;
 	}
 	return;
 }
 
-void	takeDamage(unsigned int amount);
+void	ClapTrap::takeDamage(unsigned int amount) {
+	if (this->_hitPoints > 0)
+	{
+		this->_hitPoints = this->_hitPoints - amount;
+		std::cout << "ClapTrap " << this->_name << " takes " << amount << " points of damage!"  << std::endl;
+	}
+	else if (this->_hitPoints <= 0)
+	{
+		this->_hitPoints == 0;
+		std::cout << "ClapTrap " << this->_name << " takes " << amount << " points of damage!"  << std::endl;
+	}
+	return;
+}
+
+void ClapTrap::beRepaired(unsigned int amount) {
+	if (this->_hitPoints > 0 && this->_energyPoints > 0) {
+		this->_energyPoints -= 1;
+		this->_hitPoints += amount;
+		std::cout << "ClapTrap " << this->_name << " repairs itself, recovering " 
+		          << amount << " hit points!" << std::endl;
+	} else {
+		std::cout << "ClapTrap " << this->_name << " can't repair: no energy or dead." 
+		          << std::endl;
+	}
+}

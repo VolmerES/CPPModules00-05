@@ -6,7 +6,7 @@
 /*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 17:02:13 by volmer            #+#    #+#             */
-/*   Updated: 2025/05/30 18:29:28 by volmer           ###   ########.fr       */
+/*   Updated: 2025/05/30 18:37:11 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +85,35 @@ void ClapTrap::beRepaired(unsigned int amount) {
 	}
 }
 
+std::string ClapTrap::getName() const {
+	return this->_name;
+}
+
+int ClapTrap::getHitPoints() const {
+	return this->_hitPoints;
+}
+
+int ClapTrap::getEnergyPoints() const {
+	return this->_energyPoints;
+}
+
 int ClapTrap::getAttackDamage() const {
 	return this->_attackDamage;
+}
+
+// Setters
+void ClapTrap::setName(const std::string& name) {
+	this->_name = name;
+}
+
+void ClapTrap::setHitPoints(int amount) {
+	this->_hitPoints = amount;
+}
+
+void ClapTrap::setEnergyPoints(int amount) {
+	this->_energyPoints = amount;
 }
 
 void ClapTrap::setAttackDamage(int amount) {
 	this->_attackDamage = amount;
 }
-

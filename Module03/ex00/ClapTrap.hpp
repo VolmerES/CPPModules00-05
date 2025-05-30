@@ -6,7 +6,7 @@
 /*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 16:41:32 by volmer            #+#    #+#             */
-/*   Updated: 2025/05/30 18:30:00 by volmer           ###   ########.fr       */
+/*   Updated: 2025/05/30 18:34:43 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,16 @@ class ClapTrap{
 		ClapTrap& operator=(const ClapTrap& other); //Operador de asignación
 		~ClapTrap(void); //destructor por defecto
 
+		void setName(const std::string& name);
+		void setHitPoints(int amount);
+		void setEnergyPoints(int amount);
 		void setAttackDamage(int amount);
-		void getAttackDamage(int amount);
+
+		std::string getName() const;
+		int getHitPoints() const;
+		int getEnergyPoints() const;
+		int getAttackDamage() const;
+		
 		
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);

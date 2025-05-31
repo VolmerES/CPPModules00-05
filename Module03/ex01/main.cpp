@@ -6,13 +6,17 @@
 /*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 18:14:00 by volmer            #+#    #+#             */
-/*   Updated: 2025/05/30 18:43:49 by volmer           ###   ########.fr       */
+/*   Updated: 2025/05/31 12:02:10 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main() {
+	// ------------------ TESTS CLAPTRAP ------------------
+	std::cout << BOLD << BG_CYAN << "==================== TESTS CLAPTRAP ====================" << RESET << std::endl;
+
 	std::cout << BOLD << CYAN << "----- TEST 1: Constructores y operador de asignación -----" << RESET << std::endl;
 	ClapTrap bot1("JuanBot");
 	ClapTrap bot2("CopyBot");
@@ -57,6 +61,27 @@ int main() {
 	std::cout << YELLOW << "JuanBot hit points: " << bot1.getHitPoints()
 	          << ", energy: " << bot1.getEnergyPoints() << RESET << std::endl;
 
-	std::cout << "\n" << BOLD << CYAN << "----- FIN DE PRUEBAS -----" << RESET << std::endl;
+	// ------------------ TESTS SCAVTRAP ------------------
+	std::cout << "\n" << BOLD << BG_GREEN << "==================== TESTS SCAVTRAP ====================" << RESET << std::endl;
+
+	std::cout << BOLD << GREEN << "----- TEST A: Constructores y destructor -----" << RESET << std::endl;
+	ScavTrap guardia1("Serena");
+	ScavTrap guardia2;
+	ScavTrap guardia3(guardia1);
+	ScavTrap guardia4;
+	guardia4 = guardia2;
+
+	std::cout << "\n" << BOLD << GREEN << "----- TEST B: Ataque específico de ScavTrap -----" << RESET << std::endl;
+	guardia1.attack("Intruso");
+
+	std::cout << "\n" << BOLD << GREEN << "----- TEST C: Activación del modo guardia -----" << RESET << std::endl;
+	guardia1.guardGate();
+
+	std::cout << "\n" << BOLD << GREEN << "----- TEST D: Uso de métodos heredados -----" << RESET << std::endl;
+	guardia1.takeDamage(30);
+	guardia1.beRepaired(20);
+
+	std::cout << "\n" << BOLD << BG_MAGENTA << "==================== FIN DE PRUEBAS ====================" << RESET << std::endl;
+
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 19:19:41 by volmer            #+#    #+#             */
-/*   Updated: 2025/05/31 19:41:25 by volmer           ###   ########.fr       */
+/*   Updated: 2025/05/31 19:49:46 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ FragTrap::FragTrap(void) {
 	this->_attackDamage = 30;
 }
 
-FragTrap::FragTrap(std::string name) {
+FragTrap::FragTrap(std::string name) : ClapTrap(name) {
 	std::cout << "FragTrap constructor name called" << std::endl;
-	this->_name = name;
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
 	this->_attackDamage = 30;
@@ -36,14 +35,18 @@ FragTrap::FragTrap(const FragTrap& other) {
 }
 
 FragTrap&	FragTrap::operator=(const FragTrap& other) {
+	std::cout << "FragTrap operator asignement called" << std::endl;
 	if (this != &other) {
-		std::cout << "FragTrap operator asignement called" << std::endl;
 		this->_name = other._name;
 		this->_attackDamage = other._attackDamage;
 		this->_energyPoints = other._energyPoints;
 		this->_hitPoints = other._hitPoints;
 	}
 	return (*this);
+}
+
+FragTrap::~FragTrap(void) {
+	std::cout << "FragTrap destructor called" << std::endl;
 }
 
 void	FragTrap::highFivesGuys(void) {
@@ -56,6 +59,9 @@ void FragTrap::attack(const std::string& target) {
 		std::cout <<  "FragTrap " << this->_name << " attacks " 
 		<< target << ", causing " << this->_attackDamage 
 		<< " points of damage!" << std::endl;
+	}
+	else {
+	std::cout << "FragTrap " << this->_name << " can't attack: no energy or dead." << std::endl;
 	}
 	return;
 }

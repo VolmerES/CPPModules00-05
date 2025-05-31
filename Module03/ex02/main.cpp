@@ -6,12 +6,13 @@
 /*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 18:14:00 by volmer            #+#    #+#             */
-/*   Updated: 2025/05/31 12:02:10 by volmer           ###   ########.fr       */
+/*   Updated: 2025/05/31 19:46:20 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main() {
 	// ------------------ TESTS CLAPTRAP ------------------
@@ -81,6 +82,26 @@ int main() {
 	guardia1.takeDamage(30);
 	guardia1.beRepaired(20);
 
+		// ------------------ TESTS FRAGTRAP ------------------
+	std::cout << "\n" << BOLD << BG_YELLOW << "==================== TESTS FRAGTRAP ====================" << RESET << std::endl;
+	
+	std::cout << BOLD << YELLOW << "----- TEST 1: Constructores y operador de asignación -----" << RESET << std::endl;
+	FragTrap frag1("Fiver");
+	FragTrap frag2;
+	FragTrap frag3(frag1);
+	FragTrap frag4;
+	frag4 = frag2;
+	
+	std::cout << "\n" << BOLD << YELLOW << "----- TEST 2: Ataque con mensaje personalizado -----" << RESET << std::endl;
+	frag1.attack("EnemigoGigante");
+	
+	std::cout << "\n" << BOLD << YELLOW << "----- TEST 3: Habilidad especial: high fives -----" << RESET << std::endl;
+	frag1.highFivesGuys();
+	
+	std::cout << "\n" << BOLD << YELLOW << "----- TEST 4: Métodos heredados: daño y curación -----" << RESET << std::endl;
+	frag1.takeDamage(40);
+	frag1.beRepaired(25);
+	
 	std::cout << "\n" << BOLD << BG_MAGENTA << "==================== FIN DE PRUEBAS ====================" << RESET << std::endl;
 
 	return 0;

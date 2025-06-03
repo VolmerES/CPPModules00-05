@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jdelorme <jdelorme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 18:21:38 by volmer            #+#    #+#             */
-/*   Updated: 2025/05/22 19:59:38 by volmer           ###   ########.fr       */
+/*   Updated: 2025/06/03 11:46:44 by jdelorme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fixed.hpp"
+#include "../inc/fixed.hpp"
 
 Fixed::Fixed(){
 	std::cout << "Default constructor called" << std::endl;

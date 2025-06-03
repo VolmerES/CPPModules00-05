@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jdelorme <jdelorme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 20:42:38 by volmer            #+#    #+#             */
-/*   Updated: 2025/05/22 21:50:46 by volmer           ###   ########.fr       */
+/*   Updated: 2025/06/03 11:44:58 by jdelorme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fixed.hpp"
+#include "../inc/fixed.hpp"
 
 Fixed::Fixed(void){
 	std::cout << "Default constructor called" << std::endl;
@@ -40,6 +40,7 @@ Fixed& Fixed::operator=(const Fixed& other){
 	}
 	return(*this);
 }
+
 int	Fixed::getRawBits(void) const {
 	std::cout << "getRawBits member function called" <<std::endl;
 	return (this->_FixedPointValue);
@@ -59,11 +60,11 @@ int		Fixed::toInt(void) const {
 	return (this->_FixedPointValue >> _NbFractionalBits);
 }
 
+Fixed::~Fixed(){
+	std::cout << "Destructor called" << std::endl;
+}
+
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed) {
 	out << fixed.toFloat();
 	return (out);
-}
-
-Fixed::~Fixed(){
-	std::cout << "Destructor called" << std::endl;
 }

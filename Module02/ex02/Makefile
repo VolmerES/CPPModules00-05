@@ -1,9 +1,9 @@
-SRC = main.cpp \
-fixed.cpp \
-aritmethic.cpp \
-comparison.cpp \
-increment.cpp \
-minmax.cpp
+SRC = src/main.cpp \
+src/fixed.cpp \
+src/aritmethic.cpp \
+src/comparison.cpp \
+src/increment.cpp \
+src/minmax.cpp
 OBJ = $(SRC:.cpp=.o)
 NAME = fixed
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98

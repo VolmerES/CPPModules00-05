@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jdelorme <jdelorme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 20:37:34 by volmer            #+#    #+#             */
-/*   Updated: 2025/05/22 21:44:39 by volmer           ###   ########.fr       */
+/*   Updated: 2025/06/03 11:45:56 by jdelorme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fixed.hpp"
+#include "../inc/fixed.hpp"
 
 int	main(void)
 {

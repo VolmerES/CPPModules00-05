@@ -1,5 +1,5 @@
-SRC = main.cpp \
-ClapTrap.cpp
+SRC = src/main.cpp \
+src/ClapTrap.cpp
 OBJ = $(SRC:.cpp=.o)
 NAME = ClapTrap
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98

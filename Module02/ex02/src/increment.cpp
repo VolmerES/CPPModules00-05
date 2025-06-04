@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   increment.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jdelorme <jdelorme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 11:28:52 by volmer            #+#    #+#             */
-/*   Updated: 2025/05/27 12:03:11 by volmer           ###   ########.fr       */
+/*   Updated: 2025/06/03 11:44:59 by jdelorme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fixed.hpp"
+#include "../inc/fixed.hpp"
 
 Fixed Fixed::operator++() {
 	this->_FixedPointValue++;

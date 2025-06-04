@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jdelorme <jdelorme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 17:02:13 by volmer            #+#    #+#             */
-/*   Updated: 2025/05/31 19:54:37 by volmer           ###   ########.fr       */
+/*   Updated: 2025/06/04 11:36:11 by jdelorme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "../inc/ClapTrap.hpp"
 
 //constructor defecto
 ClapTrap::ClapTrap(void) {

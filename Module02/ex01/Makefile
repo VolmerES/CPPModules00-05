@@ -1,5 +1,5 @@
-SRC = main.cpp \
-fixed.cpp
+SRC = src/main.cpp \
+src/fixed.cpp
 OBJ = $(SRC:.cpp=.o)
 NAME = fixed
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98

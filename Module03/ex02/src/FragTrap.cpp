@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jdelorme <jdelorme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 19:19:41 by volmer            #+#    #+#             */
-/*   Updated: 2025/05/31 19:49:46 by volmer           ###   ########.fr       */
+/*   Updated: 2025/06/04 11:36:28 by jdelorme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "../inc/FragTrap.hpp"
 
 FragTrap::FragTrap(void) {
 	std::cout << "FragTrap constructor called" << std::endl;

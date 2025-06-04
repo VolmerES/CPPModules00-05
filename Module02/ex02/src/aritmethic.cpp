@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   aritmethic.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jdelorme <jdelorme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 11:19:32 by volmer            #+#    #+#             */
-/*   Updated: 2025/05/27 11:19:49 by volmer           ###   ########.fr       */
+/*   Updated: 2025/06/03 11:44:50 by jdelorme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fixed.hpp"
+#include "../inc/fixed.hpp"
 
 
 Fixed Fixed::operator*(const Fixed& other) const {

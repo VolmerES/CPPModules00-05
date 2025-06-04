@@ -6,11 +6,11 @@
 /*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 18:54:21 by volmer            #+#    #+#             */
-/*   Updated: 2025/06/04 19:25:44 by volmer           ###   ########.fr       */
+/*   Updated: 2025/06/04 19:44:21 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "animal.hpp"
+#include "../inc/animal.hpp"
 
 Animal::Animal(void) {
 	std::cout << "Animal def constructor called" << std::endl;

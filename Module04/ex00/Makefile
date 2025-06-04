@@ -1,6 +1,11 @@
-SRC = 
+SRC = src/animal.cpp \
+	  src/cat.cpp \
+	  src/dog.cpp \
+	  src/WrongAnimal.cpp \
+	  src/WrongCat.cpp \
+	  src/main.cpp
 OBJ = $(SRC:.cpp=.o)
-NAME = 
+NAME = animals
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 CXX = c++
 RM = rm -f

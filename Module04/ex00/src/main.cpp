@@ -6,7 +6,7 @@
 /*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 18:33:57 by volmer            #+#    #+#             */
-/*   Updated: 2025/06/04 20:38:25 by volmer           ###   ########.fr       */
+/*   Updated: 2025/06/04 20:43:12 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,11 @@ const Animal* meta = new Animal();
 	const WrongAnimal* metawrong = new WrongAnimal();
 	const WrongAnimal* Gamusino = new WrongCat();
 
-	meta->makeSound();
+	metawrong->makeSound();
 	Gamusino->makeSound();
+
+	delete Gamusino;
+	delete metawrong;
 	
 	return 0;
 }

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jdelorme <jdelorme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 18:52:16 by volmer            #+#    #+#             */
-/*   Updated: 2025/05/31 19:55:12 by volmer           ###   ########.fr       */
+/*   Updated: 2025/06/04 11:35:03 by jdelorme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "../inc/ScavTrap.hpp"
 
 ScavTrap::ScavTrap(void) {
 	std::cout << "ScavTrap Default constructor called" << std::endl;

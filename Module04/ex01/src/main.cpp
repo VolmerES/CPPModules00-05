@@ -6,7 +6,7 @@
 /*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 18:33:57 by volmer            #+#    #+#             */
-/*   Updated: 2025/06/04 20:43:12 by volmer           ###   ########.fr       */
+/*   Updated: 2025/06/04 23:07:32 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,24 @@ const Animal* meta = new Animal();
 
 	delete Gamusino;
 	delete metawrong;
+
+
+	//Testing Brain
+	
+	Animal* Frankenstein[100];
+	for (int i = 0; i < 100; i++) {
+		if (i < 50)
+			Frankenstein[i] = new Dog();
+		else
+			Frankenstein[i] = new Cat();
+	}
+
+	for (int j = 0; j < 100; j++)
+		std::cout << j << "----->  is a " << Frankenstein[j]->getType() << std::endl;
+	for (int i = 0; i < 100; i++) {
+	delete Frankenstein[i];
+	}
+
 	
 	return 0;
 }

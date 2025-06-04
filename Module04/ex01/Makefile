@@ -3,9 +3,10 @@ SRC = src/animal.cpp \
 	  src/dog.cpp \
 	  src/WrongAnimal.cpp \
 	  src/WrongCat.cpp \
+	  src/Brain.cpp \
 	  src/main.cpp
 OBJ = $(SRC:.cpp=.o)
-NAME = animals
+NAME = frankenstein
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 CXX = c++
 RM = rm -f

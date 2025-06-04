@@ -6,7 +6,7 @@
 /*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 12:53:53 by volmer            #+#    #+#             */
-/*   Updated: 2025/06/04 12:58:34 by volmer           ###   ########.fr       */
+/*   Updated: 2025/06/04 19:20:36 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ class Dog : public Animal {
 		Dog(void);
 		Dog(const Dog& other);
 		Dog& operator=(const Dog& other);
-		~Dog(void)
+		~Dog(void);
+
+		void	makeSound(void) const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 12:32:04 by volmer            #+#    #+#             */
-/*   Updated: 2025/06/04 19:19:09 by volmer           ###   ########.fr       */
+/*   Updated: 2025/06/04 19:32:58 by volmer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 
 class Animal {
-	private:
+	protected:
 		std::string	_type;
 
 	public:

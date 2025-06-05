@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jdelorme <jdelorme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 19:35:26 by volmer            #+#    #+#             */
-/*   Updated: 2025/06/04 21:34:24 by volmer           ###   ########.fr       */
+/*   Updated: 2025/06/05 15:53:51 by jdelorme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,12 @@ Dog::~Dog(void) {
 
 void	Dog::makeSound(void) const {
 	std::cout << "WOOOOOOOOFF WOOOF" << std::endl;
+}
+
+Brain&	Dog::getBrain() {
+	return (*this->_brain);
+}
+
+void	Dog::setBrain(const int index, std::string idea) {
+	this->_brain->setIdeas(index, idea);
 }

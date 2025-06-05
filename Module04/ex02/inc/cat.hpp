@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jdelorme <jdelorme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 18:27:18 by volmer            #+#    #+#             */
-/*   Updated: 2025/06/04 21:23:56 by volmer           ###   ########.fr       */
+/*   Updated: 2025/06/05 15:40:16 by jdelorme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ class Cat : public Animal {
 		~Cat(void);
 		
 		void	makeSound(void) const;
+		Brain&	getBrain();
+		void	setBrain(const int index, std::string idea);
 };
 
 #endif

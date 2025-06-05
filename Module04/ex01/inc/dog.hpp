@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jdelorme <jdelorme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 12:53:53 by volmer            #+#    #+#             */
-/*   Updated: 2025/06/04 21:24:35 by volmer           ###   ########.fr       */
+/*   Updated: 2025/06/05 15:48:45 by jdelorme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ class Dog : public Animal {
 		~Dog(void);
 
 		void	makeSound(void) const;
+		Brain&	getBrain();
+		void	setBrain(const int index, std::string idea);
 };
 
 #endif

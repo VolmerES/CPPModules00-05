@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jdelorme <jdelorme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 19:25:58 by volmer            #+#    #+#             */
-/*   Updated: 2025/06/04 21:39:00 by volmer           ###   ########.fr       */
+/*   Updated: 2025/06/05 16:01:17 by jdelorme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,12 @@ Cat::~Cat(void) {
 
 void	Cat::makeSound(void) const {
 	std::cout << "MIIIIIIIAAAAAAUUUUUUUUU" << std::endl;
+}
+
+Brain&	Cat::getBrain() {
+	return (*this->_brain);
+}
+
+void	Cat::setBrain(const int index, std::string idea) {
+	this->_brain->setIdeas(index, idea);
 }

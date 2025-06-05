@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: volmer <volmer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jdelorme <jdelorme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 18:33:57 by volmer            #+#    #+#             */
-/*   Updated: 2025/06/04 20:43:12 by volmer           ###   ########.fr       */
+/*   Updated: 2025/06/05 16:10:14 by jdelorme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ const Animal* meta = new Animal();
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
 	
-	i->makeSound(); //will output the cat sound!
+	i->makeSound();
 	j->makeSound();
 	meta->makeSound();
 	
 	
-	// Test with WrongAnimal
+	// Test WrongAnimal
 	const WrongAnimal* metawrong = new WrongAnimal();
 	const WrongAnimal* Gamusino = new WrongCat();
 

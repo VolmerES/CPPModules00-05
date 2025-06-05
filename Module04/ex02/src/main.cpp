@@ -6,7 +6,7 @@
 /*   By: jdelorme <jdelorme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 18:33:57 by volmer            #+#    #+#             */
-/*   Updated: 2025/06/05 16:04:07 by jdelorme         ###   ########.fr       */
+/*   Updated: 2025/06/05 16:09:34 by jdelorme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,17 @@ int main() {
 
 	delete j;
 	delete i;
+
+
+	//* ABSTRACT */
+	std::cout << "\n==== ABSTRACT CLASS TEST ====\n" << std::endl;
+
+	// Animal a; // Esto no compila si Animal es abstracta
+	std::cout << "Animal* ptr = new Dog(); // Esto sí es válido\n";
+	Animal* ptr = new Dog();
+	ptr->makeSound();
+	delete ptr;
+
 
 	return 0;
 }

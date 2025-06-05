@@ -6,7 +6,7 @@
 /*   By: jdelorme <jdelorme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 18:33:57 by volmer            #+#    #+#             */
-/*   Updated: 2025/06/05 16:10:14 by jdelorme         ###   ########.fr       */
+/*   Updated: 2025/06/05 16:15:07 by jdelorme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ const Animal* meta = new Animal();
 
 	delete Gamusino;
 	delete metawrong;
+	delete i;
+	delete j;
+	delete meta;
 	
 	return 0;
 }
